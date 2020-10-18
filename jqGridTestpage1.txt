@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jqgrid testpage1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+    <script>
+    //<![CDATA[
+    $(function () {
+        "use strict";
+        $("#grid").jqGrid({
+            colModel: [
+			    { name:'id',index:'id',width:20,align: 'center'},
+                { name: "ST",index:'ST',width:500,height:80},
+                { name: "TT",index:'id',width:500,height:80}
+            ],
+            data: [
+                { id: 1, ST: "How AI is getting an emotionally intelligent reboot By John Thornhill FT", 
+				         TT: "让人工智能具有“情商” 本文6月10日发布于FT中文网" },   //此处通过ST与TT与前面表格的表头对饮，以对应显示出来
+                { id: 2, ST: "Rana el Kaliouby has spent her career tackling an increasingly important challenge: computers don’t understand humans. First, as an academic at Cambridge university and Massachusetts Institute of Technology and now as co-founder and chief executive of a Boston-based AI start-up called Affectiva, Ms el Kaliouby has been working in the fast-evolving field of Human Robot Interaction (HRI) for more than 20 years.",
+						 TT: "拉纳•埃尔•卡利乌比(Rana el Kaliouby)在职业生涯中一直在应对一项日益重要的挑战：计算机不理解人类。她在快速发展的人机互动(HRI)领域工作已有20多年，先是作为剑桥大学(University of Cambridge)和麻省理工学院(MIT)的学者，现在是波士顿人工智能初创企业Affectiva的联合创始人和首席执行官。" },
+                { id: 3, ST: "“Technology today has a lot of cognitive intelligence, or IQ", TT: "“当今的科技拥有很高的认知智商" },
+                { id: 4, ST: "but no emotional intelligence, or EQ,” she says in a telephone interview.", TT: "但没有情商，”她在一次电话采访中表示" },
+                { id: 5, ST: "“We are facing an empathy crisis. We need to redesign technology in a more human-centric way.”", TT: "“我们面临一场同理心危机。我们需要在更大程度上以人为中心来重新设计技术。”" },
+				{ id: 6, ST: "That was not much of an issue when computers only performed “back office” functions,such as data processing.", TT: "在电脑只执行数据处理等“后台”功能的时代" },
+				{ id: 7, ST: "But it has become a bigger concern as computers are deployed in more “front office” roles, such as digital assistants and robot drivers. ", TT: "但随着电脑承担更多“前台”职责（例如数字助理和驾驶机器人），这引发了更重大的担忧。" },
+				{ id: 8, ST: "Increasingly, computers are interacting directly with random humans in many different environments.", TT: "电脑日益在很多不同的环境与随机的人类直接互动。" }
+            ],
+			caption:"翻译表格demo",
+			rowNum : 10,
+			rowList : [ 1, 2, 3 ],
+			pager : '#pager',
+			sortname : 'id',
+			recordpos : 'right',
+			height:200,
+			viewrecords : true
+        });
+    });
+    //]]>
+    </script>
+</head>
+<body>
+<table id="grid"></table>
+<span style="white-space:pre">	</span><table id="list"></table>
+<span style="white-space:pre">	</span><div id="pager"></div>  <!--翻页功能语句>
+</body>
+</html>
